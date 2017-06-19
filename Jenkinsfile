@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'jenkinsci/slave:alpine'
+      image 'maven:alpine'
     }
     
   }
@@ -13,8 +13,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        tool 'M3'
-        sh '/tmp/apache-maven-3.5.0/bin/mvn compile'
+        sh 'mvn compile'
       }
     }
     stage('Unitary test') {
