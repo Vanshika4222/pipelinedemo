@@ -9,8 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         tool 'M3'
-        echo '${M2_HOME}'
-        sh 'mvn build'
+        sh '/tmp/apache-maven-3.5.0/bin/mvn build'
       }
     }
     stage('Unitary test') {
