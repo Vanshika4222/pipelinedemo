@@ -1,5 +1,10 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'jenkinsci/slave:alpine'
+    }
+    
+  }
   stages {
     stage('Checkout') {
       steps {
