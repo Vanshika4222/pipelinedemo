@@ -9,6 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         tool 'M3'
+        echo '${M2_HOME}'
         sh 'mvn build'
       }
     }
